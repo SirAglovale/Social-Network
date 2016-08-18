@@ -15,17 +15,17 @@
 Note. These commands are for debian based OSes, if you are using a different root linux please adapt the commands to suit the distro required. MongoDB have a guided online for almost all linux distros at https://www.mongodb.com/download-center?jmp=docs&_ga=1.160474683.722406060.1470998329#community
 
 1. Install npm
-	1. run sudo apt-get update
-	2. run sudo apt-get upgrade
-	3. run sudo apt-get install npm -y
+	1. `sudo apt-get update`
+	2. `sudo apt-get upgrade`
+	3. `sudo apt-get install npm -y`
 2. Install node
-	1. run sudo npm install -g n
-	2. run sudo n stable
+	1. `sudo npm install -g n`
+	2. `sudo n stable`
 3. Install mongodb
-	1. run sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-	2. run echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-	3. run sudo apt-get update
-	4. run sudo apt-get install mongodb-org
+	1. `sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927`
+	2. `echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list`
+	3. `sudo apt-get update`
+	4. `sudo apt-get install mongodb-org`
 
 ## Creating your project
 	This step will walk you through how to create a project in Node
