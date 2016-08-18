@@ -74,31 +74,29 @@ This will create a static webserver to serve all of the front end dependencies
 2. Create an app
 	1. Following on from the previous lines
 
-	`//This will create an instance of the express framework`
-
-	`var app = express();`
+	```javascript
+	//This will create an instance of the express framework
+	var app = express();
+	```
 
 3. Add static routes
 	1. Add a route for all the public documents you wish to serve such as frontend js
-
-	`app.use(express.static(__dirname + "/public"));`
-
+	```javascript
+	app.use(express.static(__dirname + "/public"));
+	```
 4. Add a listener to the server
 	1. Let the server listen on a specified port
-
-	`app.listen(1337);`
-
+	```javascript
+	app.listen(1337);
+	```
 5. Add the public directory
 	1. Create the public directory
-
-	`mkdir public`
-
-	`mkdir public/js`
-
-	`mkdir public/css`
-
-	`mkdir public/pages`
-
+	```
+	mkdir public
+	mkdir public/js
+	mkdir public/css
+	mkdir public/pages
+	```
 	This will become important once we have downloaded the cdn content
 
 ## Downloading frontend cdn content
