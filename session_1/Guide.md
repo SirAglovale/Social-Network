@@ -130,20 +130,18 @@ This will download the javascript and css libraries that will be needed for the 
 	mv ui-bootstrap.min.js public/js/ui-bootstrap.min.js
 	```
 ## Testing the sevrer
-	This will test the server to see if all of the content is loading correctly
+This will test the server to see if all of the content is loading correctly
 
-	1. Start the server
+1. Start the server
 
-		npm test
+	`npm test`
 
-		or
+	or
 
-		node socnet.js
+	`node socnet.js`
 
-	2. Connect to the server
-		Open your favourite browser and navigate to http://<IP>:1337/js/bootstrap.min.js
-		If you recieve a javascript looking document you have successfully created the
-		static server
+2. Connect to the server
+	1. Open your favourite browser and navigate to `http://<IP>:1337/js/bootstrap.min.js`, if you recieve a javascript looking document you have successfully created the static server
 
 ## Setting up mongo
 	This will setup the database for access from the server later
