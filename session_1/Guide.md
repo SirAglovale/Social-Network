@@ -1,12 +1,14 @@
-# GUIDE TO CREATING A MEAN SOCIAL NETWORK
+# Creating a MEAN social network
 
 ## Prerequisits to this session are:
+
 	1. To have a basic understanding of programming.
 	2. Knowledge of any linux distribution,
 	   windows is a little flakey with the technologies.
 	3. An install of any unix based system.
 
-Recommended
+##Recommended
+
 	1. Atom text editor
 	2. Git
 
