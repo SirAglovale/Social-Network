@@ -2,34 +2,30 @@
 
 ## Prerequisits to this session are:
 
-	1. To have a basic understanding of programming.
-	2. Knowledge of any linux distribution,
-	   windows is a little flakey with the technologies.
-	3. An install of any unix based system.
+1. To have a basic understanding of programming.
+2. Knowledge of any linux distribution, windows is a little flakey with the technologies.
+3. An install of any unix based system.
 
 ##Recommended
 
-	1. Atom text editor
-	2. Git
+1. Atom text editor
+2. Git
 
 ## Installing node npm and mongodb
-	Note. These commands are for debian based OSes, if you are using
-	      a different root linux please adapt the commands to suit the
-	      distro required. MongoDB have a guided online for almost all
-	      linux distros at https://www.mongodb.com/download-center?jmp=docs&_ga=1.160474683.722406060.1470998329#community
+Note. These commands are for debian based OSes, if you are using a different root linux please adapt the commands to suit the distro required. MongoDB have a guided online for almost all linux distros at https://www.mongodb.com/download-center?jmp=docs&_ga=1.160474683.722406060.1470998329#community
 
-	1. Install npm
-		1. run sudo apt-get update
-		2. run sudo apt-get upgrade
-		3. run sudo apt-get install npm -y
-	2. Install node
-		1. run sudo npm install -g n
-		2. run sudo n stable
-	3. Install mongodb
-		1. run sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-		2. run echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-		3. run sudo apt-get update
-		4. run sudo apt-get install mongodb-org
+1. Install npm
+	1. run sudo apt-get update
+	2. run sudo apt-get upgrade
+	3. run sudo apt-get install npm -y
+2. Install node
+	1. run sudo npm install -g n
+	2. run sudo n stable
+3. Install mongodb
+	1. run sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+	2. run echo "deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+	3. run sudo apt-get update
+	4. run sudo apt-get install mongodb-org
 
 ## Creating your project
 	This step will walk you through how to create a project in Node
