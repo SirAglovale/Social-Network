@@ -92,15 +92,18 @@ This will create a static webserver to serve all of the front end dependencies
 4. Add a listener to the server
 	1. Let the server listen on a specified port
 
-	app.listen(1337);
+	`app.listen(1337);`
 
 5. Add the public directory
 	1. Create the public directory
 
-	run mkdir public
-	run mkdir public/js
-	run mkdir public/css
-	run mkdir public/pages
+	`mkdir public`
+
+	`mkdir public/js`
+
+	`mkdir public/css`
+
+	`mkdir public/pages`
 
 	This will become important once we have downloaded the cdn content
 
