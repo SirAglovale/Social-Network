@@ -1,0 +1,11 @@
+{
+  "name": "session_1",
+  "version": "1.0.0",
+  "description": "Creating the database & boilerplate front and backends",
+  "main": "socnet.js",
+  "scripts": {
+    "test": "node socnet.js"
+  },
+  "author": "SirAglovale",
+  "license": "ISC"
+}
