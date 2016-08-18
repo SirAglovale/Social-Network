@@ -308,23 +308,7 @@ Previously we installed Monogoose as a dependency of our project
 		}
 	});
 	```
-	3. Delete User
-	```javascript
-	//Delets a user from the database
-	app.post("/user/delete", funciton(req, res) {
-		//Send error code if name is undefined
-		if(req.body.name == undefined)
-		{
-			res.send("UD-0");
-		}
-		else
-		{
-			//Delete the user
-			userModel.find({name: req.body.name}).remove().exec();
-		}
-	});
-	```
-	4. Update User
+	3. Update User
 	```javascript
 	//Updates a specific user
 	app.post("/user/update", function(req, res) {
@@ -336,6 +320,111 @@ Previously we installed Monogoose as a dependency of our project
 		else
 		{
 			userModel.update({name: req.body.name}, {name: newname});
+		}
+	});
+	```
+	4. Create Post
+	```javascript
+	//Creates a post
+	app.post("/post/create", function(req, res) {
+		if(req.body.text == undefined || req.body.userID == undefined)
+		{
+			res.send("PC-0");
+		}
+		else if(req.body.text.length < 5)
+		{
+			res.send("PC-1");
+		}
+		else if(req.body.userID == "")
+		{
+			res.send("PC-2");
+		}
+		else
+		{
+			var post = new postModel({
+				id: uuid(),
+				userID: req.body.userID,
+				text: req.body.text
+			});
+
+			post.save();
+			res.send("PC-3");
+		}
+	});
+	```
+	5. Retrieve Post
+	```javascript
+	//Retrieves all posts
+	app.post("/post/get", function(req, res) {
+		postModel.find({}, function(err, posts) {
+			if(err)
+			{
+				res.send("PG-0");
+			}
+			else
+			{
+				res.send(JSON.stringify(posts));
+			}
+		});
+	});
+	```
+	6. Create Comment
+	```javascript
+	//Creates a comment
+	app.post("/comment/create", function(req, res) {
+		//Checking for errors
+		if(req.body.text == undefined || req.body.postID == undefined || req.body.userID == undefined)
+		{
+			res.send("CC-0");
+		}
+		else if(req.body.text == "")
+		{
+			res.send("CC-1");
+		}
+		else if(req.body.postID == "")
+		{
+			res.send("CC-2");
+		}
+		else if(req.body.userID == "")
+		{
+			res.send("CC-3");
+		}
+		//Creating comment
+		else
+		{
+			var comment = new commentModel({
+				id: uuid(),
+				userID: req.body.userID,
+				postID: req.body.postID,
+				text: req.body.text
+			});
+
+			comment.save();
+			res.send("CC-4");
+		}
+	});
+	```
+	7. Retrieve Comment
+	```javascript
+	//Gets comments for a post
+	app.post("/comment/get", function(req, res) {
+		//Checking for errors
+		if(req.body.postID == undefined || req.body.postID == "")
+		{
+			res.send("CG-0");
+		}
+		else
+		{
+			commentModel.find({postID: req.body.postID}, function(err, comments) {
+				if(err)
+				{
+					res.send("CG-1");
+				}
+				else
+				{
+					res.send(JSON.stringify(comments));
+				}
+			});
 		}
 	});
 	```
