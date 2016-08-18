@@ -1,8 +1,6 @@
-*******************************************
-* GUIDE TO CREATING A MEAN SOCIAL NETWORK *
-*******************************************
+# GUIDE TO CREATING A MEAN SOCIAL NETWORK
 
-Prerequisits to this session are:
+## Prerequisits to this session are:
 	1. To have a basic understanding of programming.
 	2. Knowledge of any linux distribution,
 	   windows is a little flakey with the technologies.
