@@ -38,6 +38,7 @@ This step will walk you through how to create a project in Node
 	1. run npm init
 	2. Fill out the prompt
 
+
 	name: (socnet) socnet
 	version: (1.0.0) 1.0.1
 	description: A simple MEAN social network
@@ -61,8 +62,7 @@ This step will walk you through how to create a project in Node
 	  "license": "ISC"
 	}
 
-	Is this ok? (yes) yes`
-
+	Is this ok? (yes) yes
 ## Adding dependencies
 	This will install all of the required dependencies into the project for this session
 
