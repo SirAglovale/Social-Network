@@ -12,7 +12,7 @@
 	1. Atom text editor
 	2. Git
 
-Installing node npm and mongodb
+## Installing node npm and mongodb
 	Note. These commands are for debian based OSes, if you are using
 	      a different root linux please adapt the commands to suit the
 	      distro required. MongoDB have a guided online for almost all
@@ -31,7 +31,7 @@ Installing node npm and mongodb
 		3. run sudo apt-get update
 		4. run sudo apt-get install mongodb-org
 
-Creating your project
+## Creating your project
 	This step will walk you through how to create a project in Node
 
 	1. Create a project directory
@@ -67,7 +67,7 @@ Creating your project
 
 		Is this ok? (yes) yes
 
-Adding dependencies
+## Adding dependencies
 	This will install all of the required dependencies into the project for this session
 
 	1. Express -- For creating the server responses
@@ -75,7 +75,7 @@ Adding dependencies
 	2. Mongoose -- For querying the database
 		1. run npm install --save mongoose
 
-Creating a basic server
+## Creating a basic server
 	This will create a static webserver to serve all of the front end dependencies
 
 	1. Import your dependencies
@@ -111,7 +111,7 @@ Creating a basic server
 
 		This will become important once we have downloaded the cdn content
 
-Downloading frontend cdn content
+## Downloading frontend cdn content
 	This will download the javascript and css libraries that will be needed for the frontend
 
 	1. Bootstrap
@@ -141,7 +141,7 @@ Downloading frontend cdn content
 		wget https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.2/ui-bootstrap.min.js
 		mv ui-bootstrap.min.js public/js/ui-bootstrap.min.js
 
-Testing the sevrer
+## Testing the sevrer
 	This will test the server to see if all of the content is loading correctly
 
 	1. Start the server
@@ -157,7 +157,7 @@ Testing the sevrer
 		If you recieve a javascript looking document you have successfully created the
 		static server
 
-Setting up mongo
+## Setting up mongo
 	This will setup the database for access from the server later
 	In this tutorial we will run mongo on a non-standard port
 	For the sake of simplicity we will go with port 1338
@@ -184,7 +184,7 @@ Setting up mongo
 		When mongod has finished setting up press Ctrl + C
 		It will continue to run in background
 
-Connecting the Node Server to the database
+## Connecting the Node Server to the database
 	Previously we installed Monogoose as a dependency of our project
 	
 	1. Connect mongoose
