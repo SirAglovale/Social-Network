@@ -170,4 +170,13 @@ Setting up mongo
 
 		mongod --dbpath=data --port=1338
 
+	3. Close mongoDB
 
+		if mongo has started correctly it should tell you it is waiting for connections
+		on port 1338.
+
+		Press Ctrl + C to exit.
+
+	4. Start mongoDB in background
+
+		mongod --dbpath=data --port=1338 &
