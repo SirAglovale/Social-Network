@@ -253,15 +253,89 @@ Previously we installed Monogoose as a dependency of our project
 		}
 		else
 		{
-			//Create a new user
-			var user = new userModel({
-				name: req.body.name,
-				id: uuid()
+			userModel.findOne({name: req.body.name}, function(err, user) {
+				//If the query errors send the error code
+				if(err)
+				{
+					res.send("UC-2");
+				}
+				//If there is already a user with that name send the error code
+				if(user)
+				{
+					res.send("UC-3");
+				}
+				//Otherwise create the user
+				else
+				{
+					//Create a new user
+					var user = new userModel({
+						name: req.body.name,
+						id: uuid()
+					});
+					//Save the user
+					user.save();
+					//Send a success code
+					res.send("UC-2");
+				}
 			});
-			//Save the user
-			user.save();
-			//Send a success code
-			res.send("UC-2");
+		}
+	});
+	```
+	2. Retrieve User
+	```javascript
+	//Gets a user from the database
+	app.post("/user/get", function(req, res) {
+		//Send error code if there is no name
+		if(req.body.name == undefined)
+		{
+			res.send("UG-0");
+		}
+		//Otherwise find all models with that name
+		else
+		{
+			userModel.find({name: req.body.name}, function(err, user) {
+				//If there is an error finding users send error code
+				if(err)
+				{
+					res.send("UG-1");
+				}
+				//Otherwise send a list of users matching that description
+				else
+				{
+					res.send(JSON.stringify(user));
+				}
+			});
+		}
+	});
+	```
+	3. Delete User
+	```javascript
+	//Delets a user from the database
+	app.post("/user/delete", funciton(req, res) {
+		//Send error code if name is undefined
+		if(req.body.name == undefined)
+		{
+			res.send("UD-0");
+		}
+		else
+		{
+			//Delete the user
+			userModel.find({name: req.body.name}).remove().exec();
+		}
+	});
+	```
+	4. Update User
+	```javascript
+	//Updates a specific user
+	app.post("/user/update", function(req, res) {
+		//Send error code if name is undefined
+		if(req.body.name == undefined || req.body.newname == undefined)
+		{
+			res.send("UU-0");
+		}
+		else
+		{
+			userModel.update({name: req.body.name}, {name: newname});
 		}
 	});
 	```
