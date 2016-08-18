@@ -47,9 +47,8 @@ test command: node socnet.js
 git repository: 
 keywords: 
 author: <FNAME + LINITIAL>
-license: (ISC) 
+license: (ISC)`
 About to write to /home/james/SocNet/session_2/package.json:
-
 {
   "name": "socnet",
   "version": "1.0.1",
@@ -61,8 +60,7 @@ About to write to /home/james/SocNet/session_2/package.json:
   "author": "<FNAME + LINITIAL>",
   "license": "ISC"
 }
-
-Is this ok? (yes) yes`
+Is this ok? (yes) yes
 
 ## Adding dependencies
 	This will install all of the required dependencies into the project for this session
