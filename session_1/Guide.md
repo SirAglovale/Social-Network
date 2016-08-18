@@ -495,6 +495,9 @@ Previously we installed Monogoose as a dependency of our project
 				</span>
 			</div>
 		</nav>
+		<div class="container" ng-view>
+
+		</div>
 	</body>
 	```
 	3. Closing Document
