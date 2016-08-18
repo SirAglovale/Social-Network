@@ -184,3 +184,36 @@ Setting up mongo
 		When mongod has finished setting up press Ctrl + C
 		It will continue to run in background
 
+Connecting the Node Server to the database
+	Previously we installed Monogoose as a dependency of our project
+	
+	1. Connect mongoose
+		1. In the section before app.use(express.static...
+		//Connecting the socnet database
+		mongoose.connect("mongodb://localhost/socnet");
+
+	2. Creating scheams
+		1. Create the schema prototype
+
+		//Creating the prototype schema
+		var Schema = mongoose.Schema;
+
+		2. Create a user schema
+		//Creating users
+		var userSchema = new Schema({
+			name: String,
+			id: String,
+		});
+		//Creating post schema
+		var postSchema = new Schema({
+			id: String,
+			userID: String,
+			text: String
+		});
+		//Creating comment schema
+		var commentSchema = new Schema({
+			id: String,
+			userID: String,
+			postID: String,
+			text: String
+		});
