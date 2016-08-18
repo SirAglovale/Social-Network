@@ -140,3 +140,34 @@ Downloading frontend cdn content
 
 		wget https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.2/ui-bootstrap.min.js
 		mv ui-bootstrap.min.js public/js/ui-bootstrap.min.js
+
+Testing the sevrer
+	This will test the server to see if all of the content is loading correctly
+
+	1. Start the server
+
+		npm test
+
+		or
+
+		node socnet.js
+
+	2. Connect to the server
+		Open your favourite browser and navigate to http://<IP>:1337/js/bootstrap.min.js
+		If you recieve a javascript looking document you have successfully created the
+		static server
+
+Setting up mongo
+	This will setup the database for access from the server later
+	In this tutorial we will run mongo on a non-standard port
+	For the sake of simplicity we will go with port 1338
+
+	1. Create a data directory in your local file structure
+
+		mkdir data
+
+	2. Start mongoDB
+
+		mongod --dbpath=data --port=1338
+
+
