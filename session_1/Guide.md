@@ -58,8 +58,8 @@ This will install all of the required dependencies into the project for this ses
 	`npm install --save express`
 2. Mongoose -- For querying the database
 	`npm install --save mongoose`
-3. JSON Web Tokens
-	`npm install --save jsonwebtoken`
+3. Body Parser
+	`npm install --save body-parser`
 
 ## Creating a basic server
 This will create a static webserver to serve all of the front end dependencies
@@ -71,7 +71,7 @@ This will create a static webserver to serve all of the front end dependencies
 	//This imports the dependencies for the server app
 	var express = require("express");
 	var mongoose = require("mongoose");
-	var jsonwebtoken = require("jsonwebtoken");
+	var body-parser = require("body-parser");
 	```
 
 2. Create an app
