@@ -39,11 +39,11 @@ This step will walk you through how to create a project in Node
 	2. Fill out the prompt
 
 
-name: (socnet) socnet
-
-version: (1.0.0) 1.0.1
-
-description: A simple MEAN social network
+	name: (socnet) socnet
+	
+	version: (1.0.0) 1.0.1
+	
+	description: A simple MEAN social network
 
 entry point: (index.js) socnet.js
 
