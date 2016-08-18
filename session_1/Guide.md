@@ -225,3 +225,43 @@ Previously we installed Monogoose as a dependency of our project
 	//Creating friend model
 	var friendModel = mongoose.model("Friend", friendSchema);
 	```
+
+## Adding Routes
+1. GET Routes (these are for the front end app)
+	1. Default Route
+	```javascript
+	//Creates the route for the angular app
+	app.get("*", function(req, res) {
+		//Sends the angular layout
+		res.sendFile(__dirname + "/index.html");
+	});
+	```
+2. POST Routes (these are for the api requests)
+	1. Create User
+	```javascript
+	//Creates the route for creating users
+	app.post("/user/create", function(req, res) {
+		//If the post sent no name then send error code "UC-0"
+		if(req.body.name == undefined)
+		{
+			res.send("UC-0");
+		}
+		//If the name sent is too short send error code "UC-1"
+		else if(req.body.name.length < 2)
+		{
+			res.send("UC-1");
+		}
+		else
+		{
+			//Create a new user
+			var user = new userModel({
+				name: req.body.name,
+				id: uuid()
+			});
+			//Save the user
+			user.save();
+			//Send a success code
+			res.send("UC-2");
+		}
+	});
+	```
