@@ -129,6 +129,7 @@ This will download the javascript and css libraries that will be needed for the 
 	wget https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.2/ui-bootstrap.min.js
 	mv ui-bootstrap.min.js public/js/ui-bootstrap.min.js
 	```
+
 ## Testing the sevrer
 This will test the server to see if all of the content is loading correctly
 
