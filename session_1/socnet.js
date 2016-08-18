@@ -1,15 +1,14 @@
-//Importing express, express is an extension of the NodeJS http library.
-//We don't need to import http as express will do this for us
+//Dependencies go here
 var express = require("express");
-//Importing mongoose, mongoose is a connector for a mongoDB database,
-//mongoose provides use with the ability to create Schemas for the
-//NoSQL database on the fly.
 var mongoose = require("mongoose");
 
-//Creating the prototype schema
+//Mongo connection goes here 
+mongoose.connect("mongodb://localhost:1338/socnet");
+
+//Schema Prototype goes here
 var Schema = mongoose.Schema;
 
-//Creating the schemas
+//Schemas go here
 var userSchema = new Schema({
 	name: String,
 	id: String
@@ -29,15 +28,17 @@ var commentSchema = new Schema({
 });
 
 
+//Models go here
+var userModel = mongoose.model("User", userSchema);
+var postModel = mongoose.model("Post", postSchema);
+var commentModel = mongoose.model("Comment", commentSchema);
 
-//To create a server we must create an instance of express
+
+//express instance goes here
 var app = express();
 
-//To create static routing of files we need to tell Express where to look
-//if a route is not explicitly defined.
+//Static data goes here
 app.use(express.static(__dirname + "/public"));
 
-//Finally we need to tell express which port to listen on,
-//for demonstration purposes we will run on 1337 as anything under 1024
-//requires sudo access.
+//Open port goes here
 app.listen(1337);

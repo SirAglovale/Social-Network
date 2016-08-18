@@ -71,6 +71,7 @@ This will create a static webserver to serve all of the front end dependencies
 	//This imports the dependencies for the server app
 	var express = require("express");
 	var mongoose = require("mongoose");
+	var jsonwebtoken = require("jsonwebtoken");
 	```
 
 2. Create an app
@@ -205,6 +206,12 @@ Previously we installed Monogoose as a dependency of our project
 		postID: String,
 		text: String
 	});
+	//Creating friend schema
+	var friendSchema = new Schema({
+		id: String,
+		userOne: String,
+		userTwo: String
+	});
 	```
 3. Creating Models
 	1. Use the schemas to create the models for mongo
@@ -213,6 +220,8 @@ Previously we installed Monogoose as a dependency of our project
 	var userModel = mongoose.model("User", userSchema);
 	//Creating post model
 	var postModel = mongoose.model("Post", postSchema);
-	//Creating comment schema
+	//Creating comment model
 	var commentModel = mongoose.model("Comment", commentSchema);
+	//Creating friend model
+	var friendModel = mongoose.model("Friend", friendSchema);
 	```
