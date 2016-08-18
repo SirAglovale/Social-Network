@@ -8,6 +8,10 @@ Prerequisits to this session are:
 	   windows is a little flakey with the technologies.
 	3. An install of any unix based system.
 
+Recommended
+	1. Atom text editor
+	2. Git
+
 Installing node npm and mongodb
 	Note. These commands are for debian based OSes, if you are using
 	      a different root linux please adapt the commands to suit the
@@ -62,3 +66,49 @@ Creating your project
 
 
 		Is this ok? (yes) yes
+
+Adding dependencies
+	This will install all of the required dependencies into the project for this session
+
+	1. Express -- For creating the server responses
+		1. run npm install --save express
+	2. Mongoose -- For querying the database
+		1. run npm install --save mongoose
+
+Creating a basic server
+	This will create a static webserver to serve all of the front end dependencies
+
+	1. Import your dependencies
+		1. At the top of socnet.js
+
+		//This imports the dependencies for the server app
+		var express = require("express");
+		var mongoose = require("mongoose");
+
+	2. Create an app
+		1. Following on from the previous lines
+
+		//This will create an instance of the express framework
+		var app = express();
+
+	3. Add static routes
+		1. Add a route for all the public documents you wish to serve such as frontend js
+
+		app.use(express.static(__dirname + "/public"));
+
+	4. Add a listener to the server
+		1. Let the server listen on a specified port
+
+		app.listen(1337);
+
+	5. Add the public directory
+		1. Create the public directory
+
+		run mkdir public
+		run mkdir public/js
+		run mkdir public/css
+		run mkdir public/pages
+
+		This will become important once we have downloaded the cdn content
+
+
