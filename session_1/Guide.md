@@ -71,7 +71,7 @@ This will create a static webserver to serve all of the front end dependencies
 	//This imports the dependencies for the server app
 	var express = require("express");
 	var mongoose = require("mongoose");
-	var body-parser = require("body-parser");
+	var bodyparser = require("body-parser");
 	```
 
 2. Create an app
@@ -86,6 +86,8 @@ This will create a static webserver to serve all of the front end dependencies
 	1. Add a route for all the public documents you wish to serve such as frontend js
 	```javascript
 	app.use(express.static(__dirname + "/public"));
+	app.use(bodyparser.urlencoded({extended: false}));
+	app.use(bodyparser.json());
 	```
 4. Add a listener to the server
 	1. Let the server listen on a specified port
@@ -427,4 +429,14 @@ Previously we installed Monogoose as a dependency of our project
 			});
 		}
 	});
+	```
+3. Functions
+	1. UUID
+	```javascript
+	function uuid() {
+		function s4() {
+			return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+		}
+		return s4() + s4() + "-" + s4() + "-" + s4() + "-" + s4() + "-" + s4() + s4() + s4();
+	}
 	```
