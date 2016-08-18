@@ -6,6 +6,30 @@ var express = require("express");
 //NoSQL database on the fly.
 var mongoose = require("mongoose");
 
+//Creating the prototype schema
+var Schema = mongoose.Schema;
+
+//Creating the schemas
+var userSchema = new Schema({
+	name: String,
+	id: String
+});
+
+var postSchema = new Schema({
+	id: String,
+	userID: String,
+	text: String
+});
+
+var commentSchema = new Schema({
+	id: String,
+	userID: String,
+	postID: String,
+	text: String
+});
+
+
+
 //To create a server we must create an instance of express
 var app = express();
 
