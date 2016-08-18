@@ -472,7 +472,7 @@ Previously we installed Monogoose as a dependency of our project
 	2. Body -- This is where all of the content is displayed
 	```html
 	<body ng-app="SocNet">
-		<nav class="navbar navbar-fixed-top" role="navigation">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
@@ -481,7 +481,7 @@ Previously we installed Monogoose as a dependency of our project
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>	
 					</button>
-					<div id="navbar-brand">SocNet</div>
+					<a class="navbar-brand">SocNet</div>
 				</div>
 				<span id="navbar">
 					<div class="navbar-collapse collapse" id="navbar-collapse" aria-expanded="false" style="height: 1px;">
@@ -503,4 +503,40 @@ Previously we installed Monogoose as a dependency of our project
 	3. Closing Document
 	```html
 	</html>
+	```
+2. Angular App
+	1. Create the angular script
+	`touch public/js/socnet.js`
+	2. Use the following to create the app
+	```javascript
+	var app = angular.module("SocNet", ['ui.bootstrap', 'ngRoute']);
+
+	app.config(function($routeProvider))
+	{
+		$routeProvider
+		.when("/", {
+			templateUrl: "ng-home.html",
+			controller: "HomeCtrl"
+		})
+		.when("/login", {
+			templateUrl: "ng-login.html",
+			controller: "LoginCtrl"
+		})
+		.when("/register", {
+			templateUrl: "ng-register.html",
+			controller: "RegisterCtrl"
+		})
+		.when("/post", {
+			templateUrl: "ng-new-post.html",
+			controller: "NewPostCtrl"
+		})
+		.when("/posts", {
+			templateUrl: "ng-old-post.html",
+			controller: "OldPostCtrl"
+		})
+		.when("/user", {
+			templateUrl: "ng-user.html",
+			controller: "UserCtrl"
+		});
+	}
 	```
