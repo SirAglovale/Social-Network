@@ -65,11 +65,11 @@ This will create a static webserver to serve all of the front end dependencies
 1. Import your dependencies
 	1. At the top of socnet.js
 
-	`//This imports the dependencies for the server app`
-
-	`var express = require("express");`
-
-	`var mongoose = require("mongoose");`
+	```javascript
+	//This imports the dependencies for the server app
+	var express = require("express");
+	var mongoose = require("mongoose");
+	```
 
 2. Create an app
 	1. Following on from the previous lines
