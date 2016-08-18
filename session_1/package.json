@@ -7,5 +7,9 @@
     "test": "node socnet.js"
   },
   "author": "SirAglovale",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongoose": "^4.5.9"
+  }
 }
