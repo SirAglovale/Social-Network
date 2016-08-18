@@ -100,35 +100,35 @@ This will create a static webserver to serve all of the front end dependencies
 	This will become important once we have downloaded the cdn content
 
 ## Downloading frontend cdn content
-	This will download the javascript and css libraries that will be needed for the frontend
+This will download the javascript and css libraries that will be needed for the frontend
 
-	1. Bootstrap
-		1. Download the js into public/js/
-		
-		wget https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js
-		mv bootstrap.min.js public/js/bootstrap.min.js
-
-		2. Download the css into public/css/
-
-		wget https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
-		mv bootstrap.min.css public/css/bootstrap.min.css
-
-	2. Angular
-		1. Download Angular
-
-		wget https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js
-		mv angular.min.js public/js/angular.min.js
-
-		2. Download Angular Route
-
-		wget https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js
-		mv angular-route.min.js public/js/angular-route.min.js
-
-		3. Download Angular bootstrap-uib
-
-		wget https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.2/ui-bootstrap.min.js
-		mv ui-bootstrap.min.js public/js/ui-bootstrap.min.js
-
+1. Bootstrap
+	1. Download the js into public/js/
+	```	
+	wget https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js
+	mv bootstrap.min.js public/js/bootstrap.min.js
+	```
+	2. Download the css into public/css/
+	```
+	wget https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
+	mv bootstrap.min.css public/css/bootstrap.min.css
+	```
+2. Angular
+	1. Download Angular
+	```
+	wget https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js
+	mv angular.min.js public/js/angular.min.js
+	```
+	2. Download Angular Route
+	```
+	wget https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js
+	mv angular-route.min.js public/js/angular-route.min.js
+	```
+	3. Download Angular bootstrap-uib
+	```
+	wget https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.2/ui-bootstrap.min.js
+	mv ui-bootstrap.min.js public/js/ui-bootstrap.min.js
+	```
 ## Testing the sevrer
 	This will test the server to see if all of the content is loading correctly
 
