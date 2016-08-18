@@ -504,6 +504,7 @@ Previously we installed Monogoose as a dependency of our project
 	```html
 	</html>
 	```
+
 ## Angular App
 1. Create the angular script
 `touch public/js/socnet.js`
