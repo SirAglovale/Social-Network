@@ -177,7 +177,7 @@ Setting up mongo
 
 		Press Ctrl + C to exit.
 
-	4. Start mongoDB in a new terminal
+	4. Start mongoDB in background
 
 		mongod --dbpath=data --port=1338 &
 
