@@ -72,19 +72,22 @@ This will create a static webserver to serve all of the front end dependencies
 	1. At the top of socnet.js
 
 	`//This imports the dependencies for the server app`
+
 	`var express = require("express");`
+
 	`var mongoose = require("mongoose");`
 
 2. Create an app
 	1. Following on from the previous lines
 
-	//This will create an instance of the express framework
-	var app = express();
+	`//This will create an instance of the express framework`
+
+	`var app = express();`
 
 3. Add static routes
 	1. Add a route for all the public documents you wish to serve such as frontend js
 
-	app.use(express.static(__dirname + "/public"));
+	`app.use(express.static(__dirname + "/public"));`
 
 4. Add a listener to the server
 	1. Let the server listen on a specified port
