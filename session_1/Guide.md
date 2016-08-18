@@ -145,62 +145,62 @@ This will test the server to see if all of the content is loading correctly
 	1. Open your favourite browser and navigate to `http://<IP>:1337/js/bootstrap.min.js`, if you recieve a javascript looking document you have successfully created the static server
 
 ## Setting up mongo
-	This will setup the database for access from the server later
-	In this tutorial we will run mongo on a non-standard port
-	For the sake of simplicity we will go with port 1338
+This will setup the database for access from the server later in this tutorial we will run mongo on a non-standard port	for the sake of simplicity we will go with port 1338
 
-	1. Create a data directory in your local file structure
+1. Create a data directory in your local file structure
 
-		mkdir data
+	`mkdir data`
 
-	2. Start mongoDB
+2. Start mongoDB
 
-		mongod --dbpath=data --port=1338
+	`mongod --dbpath=data --port=1338`
 
-	3. Close mongoDB
+3. Close mongoDB
 
-		if mongo has started correctly it should tell you it is waiting for connections
-		on port 1338.
+	if mongo has started correctly it should tell you it is waiting for connections on port 1338.
 
-		Press Ctrl + C to exit.
+	Press Ctrl + C to exit.
 
-	4. Start mongoDB in background
+4. Start mongoDB in background
 
-		mongod --dbpath=data --port=1338 &
+	`mongod --dbpath=data --port=1338 &`
 
-		When mongod has finished setting up press Ctrl + C
-		It will continue to run in background
+	When mongod has finished setting up press Ctrl + C it will continue to run in background
 
 ## Connecting the Node Server to the database
-	Previously we installed Monogoose as a dependency of our project
+Previously we installed Monogoose as a dependency of our project
 	
-	1. Connect mongoose
-		1. In the section before app.use(express.static...
-		//Connecting the socnet database
-		mongoose.connect("mongodb://localhost/socnet");
+1. Connect mongoose
+	1. In the section before app.use(express.static...
+	```javascript
+	//Connecting the socnet database
+	mongoose.connect("mongodb://localhost/socnet");
+	```
 
-	2. Creating scheams
-		1. Create the schema prototype
-
-		//Creating the prototype schema
-		var Schema = mongoose.Schema;
-
-		2. Create a user schema
-		//Creating users
-		var userSchema = new Schema({
-			name: String,
-			id: String,
-		});
-		//Creating post schema
-		var postSchema = new Schema({
-			id: String,
-			userID: String,
-			text: String
-		});
-		//Creating comment schema
-		var commentSchema = new Schema({
-			id: String,
-			userID: String,
-			postID: String,
-			text: String
-		});
+2. Creating scheams
+	1. Create the schema prototype
+	```javascript
+	//Creating the prototype schema
+	var Schema = mongoose.Schema;
+	```
+	2. Create a user schema
+	```javascript
+	//Creating users
+	var userSchema = new Schema({
+		name: String,
+		id: String,
+	});
+	//Creating post schema
+	var postSchema = new Schema({
+		id: String,
+		userID: String,
+		text: String
+	});
+	//Creating comment schema
+	var commentSchema = new Schema({
+		id: String,
+		userID: String,
+		postID: String,
+		text: String
+	});
+	```
