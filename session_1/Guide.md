@@ -58,6 +58,8 @@ This will install all of the required dependencies into the project for this ses
 	`npm install --save express`
 2. Mongoose -- For querying the database
 	`npm install --save mongoose`
+3. JSON Web Tokens
+	`npm install --save jsonwebtoken`
 
 ## Creating a basic server
 This will create a static webserver to serve all of the front end dependencies
@@ -203,4 +205,14 @@ Previously we installed Monogoose as a dependency of our project
 		postID: String,
 		text: String
 	});
+	```
+3. Creating Models
+	1. Use the schemas to create the models for mongo
+	```javascript
+	//Creating user model
+	var userModel = mongoose.model("User", userSchema);
+	//Creating post model
+	var postModel = mongoose.model("Post", postSchema);
+	//Creating comment schema
+	var commentModel = mongoose.model("Comment", commentSchema);
 	```
