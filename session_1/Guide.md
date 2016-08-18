@@ -37,30 +37,31 @@ This step will walk you through how to create a project in Node
 3. Create your project
 	1. run npm init
 	2. Fill out the prompt
-		name: (socnet) socnet
-		version: (1.0.0) 1.0.1
-		description: A simple MEAN social network
-		entry point: (index.js) socnet.js
-		test command: node socnet.js
-		git repository: 
-		keywords: 
-		author: <FNAME + LINITIAL>
-		license: (ISC) 
-		About to write to /home/james/SocNet/session_2/package.json:
-		
-		{
-		  "name": "socnet",
-		  "version": "1.0.1",
-		  "description": "A simple MEAN social network",
-		  "main": "socnet.js",
-		  "scripts": {
-		    "test": "node socnet.js"
-		  },
-		  "author": "<FNAME + LINITIAL>",
-		  "license": "ISC"
-		}
+
+	name: (socnet) socnet
+	version: (1.0.0) 1.0.1
+	description: A simple MEAN social network
+	entry point: (index.js) socnet.js
+	test command: node socnet.js
+	git repository: 
+	keywords: 
+	author: <FNAME + LINITIAL>
+	license: (ISC) 
+	About to write to /home/james/SocNet/session_2/package.json:
 	
-		Is this ok? (yes) yes`
+	{
+	  "name": "socnet",
+	  "version": "1.0.1",
+	  "description": "A simple MEAN social network",
+	  "main": "socnet.js",
+	  "scripts": {
+	    "test": "node socnet.js"
+	  },
+	  "author": "<FNAME + LINITIAL>",
+	  "license": "ISC"
+	}
+
+	Is this ok? (yes) yes`
 
 ## Adding dependencies
 	This will install all of the required dependencies into the project for this session
