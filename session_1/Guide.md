@@ -39,15 +39,19 @@ This step will walk you through how to create a project in Node
 	2. Fill out the prompt
 
 
-`name: (socnet) socnet
+name: (socnet) socnet
+
 version: (1.0.0) 1.0.1
+
 description: A simple MEAN social network
+
 entry point: (index.js) socnet.js
+
 test command: node socnet.js
 git repository: 
 keywords: 
 author: <FNAME + LINITIAL>
-license: (ISC)`
+license: (ISC)
 About to write to /home/james/SocNet/session_2/package.json:
 {
   "name": "socnet",
