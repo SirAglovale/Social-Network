@@ -134,6 +134,12 @@ This will download the javascript and css libraries that will be needed for the 
 	wget https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.2/ui-bootstrap.min.js
 	mv ui-bootstrap.min.js public/js/ui-bootstrap.min.js
 	```
+3. JQuery
+	1. Download JQuery
+	```
+	wget https://code.jquery.com/jquery-2.2.4.min.js
+	mv jquery-2.2.4.min.js public/js/jquery.min.js
+	```
 
 ## Testing the sevrer
 This will test the server to see if all of the content is loading correctly
@@ -439,4 +445,59 @@ Previously we installed Monogoose as a dependency of our project
 		}
 		return s4() + s4() + "-" + s4() + "-" + s4() + "-" + s4() + "-" + s4() + s4() + s4();
 	}
+	```
+
+# Frontend
+
+## Index
+1. Basic Layout
+	1. Describe the doctype and open the HTML Document
+	```html
+	<!DOCTYPE html>
+	<html>
+	```
+	2. Head -- import scripts and set titles here
+	```html
+	<head>
+		<title>SocNet</title>
+		<link href="/css/bootstrap.min.css">
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/angular.min.js"></script>
+		<script src="/js/angular-route.min.js"</script>
+		<script src="/js/ui-bootstrap.min.js"></script>
+		<script src="/js/socnet.js"></script>
+	</head>
+	```
+	2. Body -- This is where all of the content is displayed
+	```html
+	<body ng-app="SocNet">
+		<nav class="navbar navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+						<span class="sr-only"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>	
+					</button>
+					<div id="navbar-brand">SocNet</div>
+				</div>
+				<span id="navbar">
+					<div class="navbar-collapse collapse" id="navbar-collapse" aria-expanded="false" style="height: 1px;">
+						<ul class="nav navbar-nav">
+
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+
+						</ul>
+					</div>
+				</span>
+			</div>
+		</nav>
+	</body>
+	```
+	3. Closing Document
+	```html
+	</html>
 	```
