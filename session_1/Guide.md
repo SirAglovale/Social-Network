@@ -578,17 +578,94 @@ app.controller("HomeCtrl", ["$scope", "$http", "$location", "$rootScope", functi
 
 ### NG-HOME
 ```html
+<!-- This denotes the part of the grid this element should be in and how big it should be -->
 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 col-md-offset-2 col-md-offset-3>
+	<!-- This creates a panel in the bootstrap blue colour -->
 	<div class="panel panel-primary">
+		<!-- This creates a heading for the panel -->
 		<div class="panel-heading">
 			Login
 		</div>
+		<!-- This creates the form -->
 		<div class="panel-body">
 			<div class="form-group">
-				<input type="text" placeholder="name" ng-model="user.name">
-				<button type="button" class="btn btn-primary">Login</button>
+				<input type="text" placeholder="name" ng-model="user.name" class="form-control">
+				<button type="button" class="btn btn-primary" ng-click="login()">Login</button>
 			</div>
 		</div>
 	</div>
+</div>
+```
+
+### NG-REGISTER
+```html
+<!-- This denotes the part of the grid this element should be in and how big it should be -->
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 col-md-offset-2 col-md-offset-3>
+        <!-- This creates a panel in the bootstrap blue colour -->
+        <div class="panel panel-primary">
+                <!-- This creates a heading for the panel -->
+                <div class="panel-heading">
+                        Register
+                </div>
+                <!-- This creates the form -->
+                <div class="panel-body">
+                        <div class="form-group">
+                                <input type="text" placeholder="name" ng-model="user.name" class="form-control">
+                                <button type="button" class="btn btn-primary" ng-click="register()">Register</button>
+                        </div>
+                </div>
+        </div>
+</div>
+```
+
+### NG-NEW-POST
+```html
+<!-- This denotes the part of the grid this element should be in and how big it should be -->
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 col-md-offset-2 col-md-offset-3>
+        <!-- This creates a panel in the bootstrap blue colour -->
+        <div class="panel panel-primary">
+                <!-- This creates a heading for the panel -->
+                <div class="panel-heading">
+                        Post
+                </div>
+                <!-- This creates the form -->
+                <div class="panel-body">
+                        <div class="form-group">
+                                <textarea class="form-control" ng-model="post.text" style="resize: false;">
+                                <button type="button" class="btn btn-primary" ng-click="post()">Post</button>
+                        </div>
+                </div>
+        </div>
+</div>
+```
+
+### NG-OLD-POST
+```html
+<!-- This denotes the part of the grid this element should be in and how big it should be -->
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 col-md-offset-2 col-md-offset-3>
+        <!-- This creates a panel in the bootstrap blue colour -->
+        <div class="panel panel-primary" ng-repeat="item in posts">
+                <div class="panel-body">
+                        <p>
+				{{item.text}}
+			</p>
+                </div>
+        </div>
+</div>
+```
+
+### NG-USER
+```html
+<!-- This denotes the part of the grid this element should be in and how big it should be -->
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 col-md-offset-2 col-md-offset-3>
+	<input type="text" placeholder="Name" ng-model="search" class="form-control">
+        <!-- This creates a panel in the bootstrap blue colour -->
+        <div class="panel panel-primary" ng-repeat="item in users | filter:search">
+                <div class="panel-body">
+                        <p>
+                                {{item.text}}
+                        </p>
+                </div>
+        </div>
 </div>
 ```
