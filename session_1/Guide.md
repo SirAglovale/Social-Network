@@ -575,3 +575,20 @@ app.controller("HomeCtrl", ["$scope", "$http", "$location", "$rootScope", functi
 	};
 }]);
 ```
+
+### NG-HOME
+```html
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-6 col-md-offset-2 col-md-offset-3>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			Login
+		</div>
+		<div class="panel-body">
+			<div class="form-group">
+				<input type="text" placeholder="name" ng-model="user.name">
+				<button type="button" class="btn btn-primary">Login</button>
+			</div>
+		</div>
+	</div>
+</div>
+```
