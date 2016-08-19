@@ -1,4 +1,4 @@
-# Creating a MEAN social network
+# Creating a MEAN :see_no_evil: :hear_no_evil: :speak_no_evil: social network
 
 ## Prerequisits to this session are:
 
