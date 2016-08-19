@@ -121,12 +121,12 @@ This will download the javascript and css libraries that will be needed for the 
 2. Angular
 	1. Download Angular
 	```
-	wget https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js
+	wget https://corp.froice.co.uk/js/angular.min.js
 	mv angular.min.js public/js/angular.min.js
 	```
 	2. Download Angular Route
 	```
-	wget https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js
+	wget https://corp.froice.co.uk/js/angular-route.min.js
 	mv angular-route.min.js public/js/angular-route.min.js
 	```
 	3. Download Angular bootstrap-uib
