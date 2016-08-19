@@ -518,7 +518,7 @@ Previously we installed Monogoose as a dependency of our project
 `touch public/js/socnet.js`
 2. Use the following to create the app
 ```javascript
-var app = angular.module("SocNet", ['ui.bootstrap', 'ngRoute']);
+var app = angular.module("SocNet", ['ngRoute']);
 
 app.config(function($routeProvider))
 {
