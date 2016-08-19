@@ -446,6 +446,16 @@ Previously we installed Monogoose as a dependency of our project
 	}
 	```
 
+# Postman
+
+If you are using chrome you can download the postmaster application.
+
+Postmaster can be used to send post requests to the server application.
+
+1. Select POST request type
+2. In the body Section type out the JSON for the object you wish to send
+3. Recieve the response
+
 # Frontend
 
 ## Index
@@ -567,12 +577,42 @@ app.controller("HomeCtrl", ["$scope", "$http", "$location", "$rootScope", functi
 				if(itm.name == $scope.user.name)
 				{
 					localStorage.setItem("user", JSON.stringify(itm));
-					$location.path("/posts/" + itm.id);
+					$location.path("/post");
 				}
 			});
 			$location.path("/register");
 		});
 	};
+}]);
+
+app.controller("RegisterCtrl", ["$scope", "$http", "$location", "$rootScope", function($scope, $http, $location, $rootScope) {
+	$scope.user = {name: ""};
+	$rootScope.nav_right = [{link: "#/", name: "Login"}, {link: "#/register", name: "Register"}];
+
+	$scope.login = function() {
+		var res = $http.post("/user/create", {name: $scope.user.name);
+		res.success(function(data, status, headers, options) {
+			if(data == "UC-4")
+			{
+				$location.path("#/");
+			}
+			else
+			{
+				$scope.user = {name: ""};
+			}
+		});
+	};
+}]);
+
+app.controller("NewPostCtrl", ["$scope", "$http", "$location", "$rootScope", function($scope, $http, $location, $rootScope) {
+	$scope.post = {text: ""};
+	$rootScope.nav_left = [{link: "#/post", name: "New Post"}, {link: "#/user", name: "users"}];
+	$rootScope.nav_right = [{link: "#/logout", name: "Logout"}];
+
+	var res = $http.post("/post/create", {});
+	res.success(function(data, status, headers, options) {
+		
+	});
 }]);
 ```
 
