@@ -293,27 +293,19 @@ Previously we installed Monogoose as a dependency of our project
 	```javascript
 	//Gets a user from the database
 	app.post("/user/get", function(req, res) {
-		//Send error code if there is no name
-		if(req.body.name == undefined)
-		{
-			res.send("UG-0");
-		}
-		//Otherwise find all models with that name
-		else
-		{
-			userModel.find({name: req.body.name}, function(err, user) {
-				//If there is an error finding users send error code
-				if(err)
-				{
-					res.send("UG-1");
-				}
-				//Otherwise send a list of users matching that description
-				else
-				{
-					res.send(JSON.stringify(user));
-				}
-			});
-		}
+		//Find all models
+		userModel.find({}, function(err, user) {
+			//If there is an error finding users send error code
+			if(err)
+			{
+				res.send("UG-1");
+			}
+			//Otherwise send a list of users matching that description
+			else
+			{
+				res.send(JSON.stringify(user));
+			}
+		});
 	});
 	```
 	3. Update User
@@ -364,16 +356,23 @@ Previously we installed Monogoose as a dependency of our project
 	```javascript
 	//Retrieves all posts
 	app.post("/post/get", function(req, res) {
-		postModel.find({}, function(err, posts) {
-			if(err)
-			{
-				res.send("PG-0");
-			}
-			else
-			{
-				res.send(JSON.stringify(posts));
-			}
-		});
+		if(req.body.id == undefined)
+		{
+			res.send("PG-0");
+		}
+		else
+		{
+			postModel.find({userID: req.body.id}, function(err, posts) {
+				if(err)
+				{
+					res.send("PG-1");
+				}
+				else
+				{
+					res.send(JSON.stringify(posts));
+				}
+			});
+		}
 	});
 	```
 	6. Create Comment
@@ -476,7 +475,7 @@ Previously we installed Monogoose as a dependency of our project
 	2. Body -- This is where all of the content is displayed
 	```html
 	<!-- This is what the end user sees ng-app defines what angular module is involved and the controller defines which controller to use within the module-->
-	<body ng-app="SocNet" ng-controller="socCtrl">
+	<body ng-app="SocNet" ng-controller="HomeCtrl">
 		<!-- This creates the navbar at the top of the page -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
@@ -523,30 +522,56 @@ var app = angular.module("SocNet", ['ui.bootstrap', 'ngRoute']);
 
 app.config(function($routeProvider))
 {
+	// A / will denote the login route all other routes will be defined otherwise
 	$routeProvider
 	.when("/", {
 		templateUrl: "ng-home.html",
 		controller: "HomeCtrl"
 	})
-	.when("/login", {
-		templateUrl: "ng-login.html",
-		controller: "LoginCtrl"
-	})
+	//Register will register a user using a form similar to that of login
 	.when("/register", {
 		templateUrl: "ng-register.html",
 		controller: "RegisterCtrl"
 	})
+	//This will create a post
 	.when("/post", {
 		templateUrl: "ng-new-post.html",
 		controller: "NewPostCtrl"
 	})
-	.when("/posts", {
+	//This will get all posts of a user
+	.when("/posts/:id", {
 		templateUrl: "ng-old-post.html",
 		controller: "OldPostCtrl"
 	})
+	//This will get a user
 	.when("/user", {
 		templateUrl: "ng-user.html",
 		controller: "UserCtrl"
 	});
 }
+
+//Scope is the current controllers reach
+//Http is the method of posting to the server
+//Location is a way of changing where the front end points
+//Root Scope is the whole page
+app.controller("HomeCtrl", ["$scope", "$http", "$location", "$rootScope", function($scope, $http, $location, $rootScope) {
+	$scope.user = {name: ""};
+	//This will change the right hand list in the navbar
+	$rootScope.nav_right = [{link: "#/", name: "Login"}, {link: "#/register", name: "Register"}];
+
+	$scope.login = function() {
+		//This scope will become more aparent whence the ng-home.html has been created
+		var res = $http.post("/user/get", {});
+		res.success(function(data, status, headers, config) {
+			data.forEach(funciton(itm, idx){
+				if(itm.name == $scope.user.name)
+				{
+					localStorage.setItem("user", JSON.stringify(itm));
+					$location.path("/posts/" + itm.id);
+				}
+			});
+			$location.path("/register");
+		});
+	};
+}]);
 ```
