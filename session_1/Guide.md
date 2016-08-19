@@ -454,13 +454,18 @@ Previously we installed Monogoose as a dependency of our project
 	1. Describe the doctype and open the HTML Document
 	```html
 	<!DOCTYPE html>
+	<!-- Starts the html Document -->
 	<html>
 	```
 	2. Head -- import scripts and set titles here
 	```html
+	<!-- The head of the document is where all of the browser data is set -->
 	<head>
+		<!-- This sets the title of the page -->
 		<title>SocNet</title>
+		<!-- This is where css is included into the document -->
 		<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<!-- This is where external scripts are loaded -->
 		<script src="/js/jquery.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/angular.min.js"></script>
@@ -470,9 +475,12 @@ Previously we installed Monogoose as a dependency of our project
 	```
 	2. Body -- This is where all of the content is displayed
 	```html
+	<!-- This is what the end user sees ng-app defines what angular module is involved and the controller defines which controller to use within the module-->
 	<body ng-app="SocNet" ng-controller="socCtrl">
+		<!-- This creates the navbar at the top of the page -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
+				<!-- This controls the button when the page is shrunk to an sm or xs size -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
 						<span class="sr-only"></span>
@@ -482,6 +490,7 @@ Previously we installed Monogoose as a dependency of our project
 					</button>
 					<a class="navbar-brand" href="#/">SocNet</a>
 				</div>
+				<!-- This provides all of the routes for angular, there is a left and right navbar-->
 				<div class="collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li ng-repeat="item in nav_left"><a href="{{item.link}}">{{item.name}}</a></li>
@@ -495,6 +504,7 @@ Previously we installed Monogoose as a dependency of our project
 		<br>
 		<br>
 		<br>
+		<!-- This is the dynamic content -->
 		<div class="container" ng-view>
 		</div>
 	</body>
